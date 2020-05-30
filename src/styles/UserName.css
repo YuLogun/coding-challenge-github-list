@@ -1,0 +1,19 @@
+.projects-container {
+  font-family: "Libre Baskerville", serif;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.projects-container a {
+  padding: 1em;
+  font-family: "Libre Baskerville", serif;
+  color: #24292e;
+  font-size: 1.15rem;
+  transition: ease-in;
+}
+
+.projects-container a:hover {
+  transform: scale(1.25);
+}

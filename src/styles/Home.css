@@ -1,0 +1,44 @@
+.home-container {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.25rem;
+}
+
+@media screen and (max-width: 764px) {
+  .home-container {
+    flex-direction: column;
+    font-size: 1rem;
+  }
+}
+
+#input-field,
+#search-button {
+  border-radius: 4px;
+  padding: 1em;
+  font-size: inherit;
+  font-family: "Libre Baskerville", serif;
+}
+
+#input-field {
+  width: 65%;
+  border: 1px solid #24292e;
+}
+
+#input-field:focus {
+  box-shadow: 0 4px 5px rgba(0, 0, 0, 0.2);
+}
+
+#search-button {
+  background-color: #fff;
+  color: #24292e;
+  border: 1px solid #24292e;
+}
+
+#search-button:hover {
+  background-color: #24292e;
+  color: #fff;
+  border: none;
+}

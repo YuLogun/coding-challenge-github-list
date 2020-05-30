@@ -1,0 +1,39 @@
+.header {
+  justify-content: space-around;
+  align-items: center;
+  display: flex;
+  width: 100%;
+  background-color: #24292e;
+  color: #fff;
+  font-size: 1.25em;
+}
+
+.userName,
+.repositoryName {
+  width: 100%;
+  margin: 0;
+  padding: 1em;
+  font-size: 1.5rem;
+  text-align: center;
+  font-family: "Libre Baskerville", serif;
+  font-weight: 600;
+}
+
+.link {
+  width: 20%;
+  color: #fff;
+  padding: 0.25em;
+}
+
+.links-container {
+  display: flex;
+  flex-direction: column;
+  margin-left: 1em;
+}
+
+@media screen and (max-width: 764px) {
+  .userName,
+  .repositoryName {
+    font-size: 1rem;
+  }
+}
