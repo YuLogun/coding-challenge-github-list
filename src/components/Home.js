@@ -1,7 +1,9 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import { withRouter } from "react-router-dom";
 
 import "../styles/Home.css";
+import ThemeButton from "../context/ThemeButton";
+import { MyContext, themes } from "../context/MyContext";
 
 const Home = (props) => {
   const [value, setValue] = useState("");
@@ -9,23 +11,32 @@ const Home = (props) => {
     setValue(e.target.value);
   };
   const handleClick = (e) => {
-    //e.preventDefault();
-    //props.handleBtnClick(value);
     props.history.push(`/${value}`);
   };
 
+  const context = useContext(MyContext);
+  console.log("d", context === themes.dark);
+  console.log("l", context === themes.light);
+
   return (
-    <div className="home-container">
-      <input
-        id="input-field"
-        type="text"
-        value={value}
-        placeholder="Look up your favourite dev.."
-        onChange={handleChange}
-      />
-      <button id="search-button" onClick={handleClick}>
-        GET REPOS
-      </button>
+    <div
+      className="container"
+      style={{ background: context.background, color: context.foreground }}
+    >
+      <ThemeButton handleClick={props.handleThemeClick} />
+
+      <div className="home-container">
+        <input
+          id="input-field"
+          type="text"
+          value={value}
+          placeholder="Look up your favourite dev.."
+          onChange={handleChange}
+        />
+        <button id="search-button" onClick={handleClick}>
+          GET REPOS
+        </button>
+      </div>
     </div>
   );
 };

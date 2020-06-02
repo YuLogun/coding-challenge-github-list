@@ -1,0 +1,19 @@
+.button-container {
+  justify-self: flex-end;
+  margin: 0;
+  padding: 1.5em;
+  z-index: 100;
+}
+
+.themed-button {
+  width: 4em;
+  height: 3em;
+  background: #fafd8a;
+  box-shadow: 2px 1px 6px #8d8afd;
+  border: 1px solid black;
+  border-radius: 10px;
+}
+
+.themed-button i {
+  font-size: 1.5em;
+}

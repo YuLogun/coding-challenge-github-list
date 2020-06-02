@@ -1,6 +1,13 @@
-.home-container {
+.container {
   width: 100vw;
   height: 100vh;
+  display: grid;
+  grid-template-rows: 5% 95%;
+}
+
+.home-container {
+  height: 100%;
+  width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
