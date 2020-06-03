@@ -3,6 +3,7 @@ import { Route, Switch } from "react-router-dom";
 
 import "./styles/LoadingIcon.css";
 import { MyContext, themes } from "./context/MyContext";
+import MyErrorBoundary from "./components/MyErrorBoundary";
 
 const Home = React.lazy(() => import("./components/Home"));
 const UserName = React.lazy(() => import("./components/UserName"));
@@ -15,32 +16,34 @@ function App() {
   };
   return (
     <div>
-      <Suspense
-        fallback={
-          <div className="loader-container">
-            <div className="lds-ripple">
-              <div />
-              <div />
+      <MyErrorBoundary>
+        <Suspense
+          fallback={
+            <div className="loader-container">
+              <div className="lds-ripple">
+                <div />
+                <div />
+              </div>
             </div>
-          </div>
-        }
-      >
-        <MyContext.Provider value={theme}>
-          <Switch>
-            <Route
-              exact
-              path="/"
-              component={() => <Home handleThemeClick={handleThemeClick} />}
-            />
-            <Route exact path="/:userName" component={UserName} />
-            <Route
-              exact
-              path="/:userName/:repositoryName"
-              component={ReadMeMarkup}
-            />
-          </Switch>
-        </MyContext.Provider>
-      </Suspense>
+          }
+        >
+          <MyContext.Provider value={theme}>
+            <Switch>
+              <Route
+                exact
+                path="/"
+                component={() => <Home handleThemeClick={handleThemeClick} />}
+              />
+              <Route exact path="/:userName" component={UserName} />
+              <Route
+                exact
+                path="/:userName/:repositoryName"
+                component={ReadMeMarkup}
+              />
+            </Switch>
+          </MyContext.Provider>
+        </Suspense>
+      </MyErrorBoundary>
     </div>
   );
 }

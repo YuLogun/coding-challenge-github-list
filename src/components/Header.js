@@ -2,7 +2,6 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 import "../styles/Header.css";
-import ThemeButton from "../context/ThemeButton";
 
 const Header = ({ userName, repositoryName, showRepoName }) => {
   return (
@@ -29,7 +28,6 @@ const Header = ({ userName, repositoryName, showRepoName }) => {
           {userName}
         </p>
       )}
-      {/*  <ThemeButton /> */}
     </header>
   );
 };

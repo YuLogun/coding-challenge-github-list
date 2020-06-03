@@ -3,7 +3,7 @@ import { withRouter } from "react-router-dom";
 
 import "../styles/Home.css";
 import ThemeButton from "../context/ThemeButton";
-import { MyContext, themes } from "../context/MyContext";
+import { MyContext } from "../context/MyContext";
 
 const Home = (props) => {
   const [value, setValue] = useState("");
@@ -15,8 +15,6 @@ const Home = (props) => {
   };
 
   const context = useContext(MyContext);
-  console.log("d", context === themes.dark);
-  console.log("l", context === themes.light);
 
   return (
     <div
