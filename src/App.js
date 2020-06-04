@@ -4,6 +4,7 @@ import { Route, Switch } from "react-router-dom";
 import "./styles/LoadingIcon.css";
 import { MyContext, themes } from "./context/MyContext";
 import MyErrorBoundary from "./components/MyErrorBoundary";
+import NoMatch from "./components/404";
 
 const Home = React.lazy(() => import("./components/Home"));
 const UserName = React.lazy(() => import("./components/UserName"));
@@ -40,6 +41,7 @@ function App() {
                 path="/:userName/:repositoryName"
                 component={ReadMeMarkup}
               />
+              <Route path="*" component={NoMatch} />
             </Switch>
           </MyContext.Provider>
         </Suspense>
@@ -47,5 +49,8 @@ function App() {
     </div>
   );
 }
+
+// - A <Switch> renders the first child <Route> that matches
+// - A <Route path="*> always matches
 
 export default App;
